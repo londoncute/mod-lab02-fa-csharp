@@ -31,9 +31,9 @@ namespace UnitTests
             FA2 fa2 = new FA2();
             
             // Should accept: odd number of 0s and odd number of 1s
-            Assert.IsTrue(fa2.Run("01"));
-            Assert.IsTrue(fa2.Run("00111"));
-            Assert.IsFalse(fa2.Run("101"));   // Corrected: even 1s (2), odd 0s (1)
+            Assert.IsTrue(fa2.Run("01"));     // 1 '0', 1 '1' (odd, odd)
+            Assert.IsFalse(fa2.Run("00111")); // 2 '0's, 3 '1's (even, odd)
+            Assert.IsFalse(fa2.Run("101"));   // 1 '0', 2 '1's (odd, even)
             
             // Should reject
             Assert.IsFalse(fa2.Run("00"));    // even 0s, even 1s
