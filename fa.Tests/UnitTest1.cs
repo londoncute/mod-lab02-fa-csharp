@@ -33,7 +33,7 @@ namespace UnitTests
             // Should accept: odd number of 0s and odd number of 1s
             Assert.IsTrue(fa2.Run("01"));
             Assert.IsTrue(fa2.Run("00111"));
-            Assert.IsTrue(fa2.Run("101"));
+            Assert.IsFalse(fa2.Run("101"));   // Corrected: even 1s (2), odd 0s (1)
             
             // Should reject
             Assert.IsFalse(fa2.Run("00"));    // even 0s, even 1s
@@ -58,7 +58,7 @@ namespace UnitTests
             Assert.IsFalse(fa3.Run("1"));
             Assert.IsFalse(fa3.Run("101"));
             Assert.IsFalse(fa3.Run("010"));
-            Assert.IsNull(fa3.Run("11a"));    
+            Assert.IsNull(fa3.Run("11a"));    // invalid character
         }
     }
 }
